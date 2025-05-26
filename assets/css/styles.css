@@ -193,28 +193,34 @@ img {
   padding: 1rem;
   display: grid;
   overflow: hidden;
+  place-items: end center; /* Căn giữa và đặt ở cuối */
 }
 
 .perfil__img {
-  width: 250px;
+  width: 600px; /* Tăng kích thước một chút */
   position: absolute;
-  justify-content: center;
-  align-self: flex-end;
+  bottom: 0; /* Đặt ở đáy container */
+  left: 50%;
+  transform: translateX(-50%); /* Căn giữa hoàn hảo */
+  z-index: 1; /* Đảm bảo hình ảnh ở phía trước */
 }
 
 .perfil__data {
   align-self: flex-end;
-  background-color: hsla(0, 0%, 1%, 0.1);
-  backdrop-filter: blur(16px);
-  -webkit-backdrop-filter: blur(16px);
+  background-color: hsla(0, 0%, 1%, 0.15); /* Tăng độ trong suốt */
+  backdrop-filter: blur(20px); /* Tăng độ mờ */
+  -webkit-backdrop-filter: blur(20px);
   padding: 1.5rem 1rem;
   border-radius: 1.5rem;
-  border: 2px solid hsla(0, 0%, 100%, 0.5);
+  border: 2px solid hsla(0, 0%, 100%, 0.3);
+  z-index: 2; /* Đặt data phía trên hình ảnh */
+  width: 100%;
 }
 
 .perfil__name {
   font: var(--font-regular) var(--biggest-font-size) var(--second-font);
   margin-bottom: 1rem;
+  text-align: center; /* Căn giữa tên */
 }
 
 .perfil__buttons {
@@ -245,6 +251,7 @@ img {
 
 .info__name {
   font: var(--font-regular) var(--h1-font-size) var(--second-font);
+  text-align: center; /* Căn giữa tên */
 }
 
 .info__data {
@@ -256,22 +263,25 @@ img {
 
 .info__image {
   background: var(--conic-gradient);
-  height: 180px;
+  height: 200px; /* Tăng chiều cao */
   border-radius: 2rem;
   display: grid;
+  place-items: end center; /* Căn giữa và đặt ở cuối */
   margin-block: 1.5rem;
   overflow: hidden;
 }
 
 .info__img {
-  width: 140px;
+  width: 160px; /* Tăng kích thước */
   justify-self: center;
   align-self: flex-end;
+  transform: translateY(10px); /* Điều chỉnh vị trí để phù hợp hơn */
 }
 
 .info__description {
   font-size: var(--small-font-size);
   margin-bottom: 2rem;
+  text-align: center; /* Căn giữa mô tả */
 }
 
 .info .button {
@@ -283,6 +293,7 @@ img {
   font-size: var(--normal-font-size);
   font-weight: var(--font-regular);
   margin-bottom: 1rem;
+  text-align: center; /* Căn giữa tên */
 }
 
 .about__social {
@@ -311,25 +322,53 @@ img {
 
 .about__image {
   background: var(--conic-gradient);
-  height: 180px;
+  height: 280px; /* Tăng chiều cao để chứa toàn bộ hình ảnh */
   border-radius: 2rem;
   display: grid;
+  place-items: center; /* Căn giữa theo cả hai chiều */
   overflow: hidden;
+  margin-block: 1.5rem;
 }
 
 .about__img {
-  width: 250px;
+  width: 150px; /* Giảm kích thước một chút để vừa container */
   justify-self: center;
-  transform: translateY(-2.5rem);
+  align-self: center; /* Căn giữa theo chiều dọc */
+  transform: none; /* Bỏ transform để không bị dịch chuyển */
+  object-fit: cover; /* Đảm bảo hình ảnh không bị biến dạng */
+  margin-top: 60px;
 }
 
 .about__note {
   font-size: var(--small-font-size);
   margin-block: 1rem 2rem;
+  text-align: center; /* Căn giữa ghi chú */
 }
 
 .about .button {
   width: 100%;
+}
+
+/* Responsive cho mobile */
+@media screen and (max-width: 576px) {
+  .perfil__img {
+    width: 240px;
+  }
+
+  .info__img {
+    width: 140px;
+  }
+
+  .about__img {
+    width: 240px;
+  }
+
+  .perfil,
+  .info__image,
+  .about__image {
+    height: auto;
+    min-height: 300px;
+  }
 }
 
 /*===== SKILLS =====*/
