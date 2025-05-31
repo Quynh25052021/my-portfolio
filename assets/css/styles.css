@@ -193,34 +193,35 @@ img {
   padding: 1rem;
   display: grid;
   overflow: hidden;
-  place-items: end center; /* Căn giữa và đặt ở cuối */
+  place-items: end center;
 }
 
 .perfil__img {
-  width: 600px; /* Tăng kích thước một chút */
+  width: 600px;
+  height: auto;
   position: absolute;
-  bottom: 0; /* Đặt ở đáy container */
+  bottom: 0;
   left: 50%;
-  transform: translateX(-50%); /* Căn giữa hoàn hảo */
-  z-index: 1; /* Đảm bảo hình ảnh ở phía trước */
+  transform: translateX(-50%);
+  z-index: 1;
 }
 
 .perfil__data {
   align-self: flex-end;
-  background-color: hsla(0, 0%, 1%, 0.15); /* Tăng độ trong suốt */
-  backdrop-filter: blur(20px); /* Tăng độ mờ */
+  background-color: hsla(0, 0%, 1%, 0.15);
+  backdrop-filter: blur(20px);
   -webkit-backdrop-filter: blur(20px);
   padding: 1.5rem 1rem;
   border-radius: 1.5rem;
   border: 2px solid hsla(0, 0%, 100%, 0.3);
-  z-index: 2; /* Đặt data phía trên hình ảnh */
+  z-index: 2;
   width: 100%;
 }
 
 .perfil__name {
   font: var(--font-regular) var(--biggest-font-size) var(--second-font);
   margin-bottom: 1rem;
-  text-align: center; /* Căn giữa tên */
+  text-align: center;
 }
 
 .perfil__buttons {
